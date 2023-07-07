@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/01 15:30:17 by user              #+#    #+#             */
-/*   Updated: 2023/07/07 15:00:49 by user             ###   ########.fr       */
+/*   Created: 2023/01/24 16:41:48 by apiloian          #+#    #+#             */
+/*   Updated: 2023/04/22 19:17:59 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# define MINISHELL "\e[1;31mminishell\033[0m "
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*new_str;
+	int		i;
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <fcntl.h>
-# include <readline/readline.h>
-# include <readline/history.h>
-# include <sys/time.h>
-# include <libft.h>
-
-void    init(int ac, char **av, char **envp);
-
-#endif
+	if (!s1 || !s2)
+		return (0);
+	new_str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!new_str)
+		return (0);
+	i = 0;
+	while (*s1)
+	{
+		new_str[i] = *s1;
+		i++;
+		s1++;
+	}
+	while (*s2)
+	{
+		new_str[i] = *s2;
+		i++;
+		s2++;
+	}
+	new_str[i] = 0;
+	return (new_str);
+}
