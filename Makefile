@@ -1,9 +1,10 @@
-NAME = minishell
+NAME 	= minishell
 
-SRC = main.c
-OBJ = $(SRC:.c=.o)
+SRC 	= main.c	utils1.c
 
-FLAGS = -Wall -Werror -Wextra
+OBJ 	= $(SRC:.c=.o)
+
+FLAGS 	= -Wall -Werror -Wextra
 
 LINKERS = -lreadline
 

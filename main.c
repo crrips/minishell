@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:16:49 by apiloian          #+#    #+#             */
-/*   Updated: 2023/07/06 12:13:46 by user             ###   ########.fr       */
+/*   Updated: 2023/07/07 14:45:20 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,7 @@
 
 int	main(int ac, char **av, char **envp)
 {
-	char	*str;
-	if (ac || av || envp)
-	{
-	}
-	while (1)
-	{
-		printf("\e[1;36mminishell\033[0m ");
-		str = readline(0);
-		if (*str)
-		{
-			add_history(str);
-			printf("command not found: %s\n", str);
-		}
-	}
+	init(ac, av, envp);
 	return (0);
 }
 
