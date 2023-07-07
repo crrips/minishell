@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: apiloian <apiloian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 14:40:37 by user              #+#    #+#             */
-/*   Updated: 2023/07/07 15:08:20 by user             ###   ########.fr       */
+/*   Created: 2023/07/07 14:40:37 by apiloian          #+#    #+#             */
+/*   Updated: 2023/07/07 20:55:06 by apiloian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@ void	init(int ac, char **av, char **envp)
 	}
 	while (1)
 	{
-		printf(MINISHELL);
-		str = readline(0);
+		str = readline(MINISHELL);
 		if (*str)
 		{
-			printf("command not found: %s\n", str);
+			printf(NO_CMD, str);
 			add_history(str);
 		}
 	}
