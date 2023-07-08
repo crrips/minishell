@@ -6,7 +6,7 @@
 /*   By: apiloian <apiloian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 15:30:17 by apiloian          #+#    #+#             */
-/*   Updated: 2023/07/08 20:20:07 by apiloian         ###   ########.fr       */
+/*   Updated: 2023/07/08 20:54:09 by apiloian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,11 @@
 typedef struct s_data
 {
 	char	*path;
+	char	*join_path;
 	char	**cmd_path;
 }	t_data;
 
-void	init(int ac, char **av, char **envp, t_data *data);
+void	init(char **envp, t_data *data);
 
 char	*find_path(char **env);
 
