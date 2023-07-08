@@ -6,7 +6,7 @@
 /*   By: apiloian <apiloian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 15:30:17 by apiloian          #+#    #+#             */
-/*   Updated: 2023/07/07 20:54:26 by apiloian         ###   ########.fr       */
+/*   Updated: 2023/07/08 20:20:07 by apiloian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@
 # include <sys/time.h>
 # include <libft.h>
 
-void    init(int ac, char **av, char **envp);
+typedef struct s_data
+{
+	char	*path;
+	char	**cmd_path;
+}	t_data;
+
+void	init(int ac, char **av, char **envp, t_data *data);
+
+char	*find_path(char **env);
+
+char	*x_path(t_data *data, char *argv);
 
 #endif
