@@ -6,7 +6,7 @@
 /*   By: apiloian <apiloian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 18:04:30 by apiloian          #+#    #+#             */
-/*   Updated: 2023/07/08 20:30:54 by apiloian         ###   ########.fr       */
+/*   Updated: 2023/07/08 21:03:43 by apiloian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ char	*x_path(t_data *data, char *argv)
 		i++;
 	}
 	printf(NO_CMD, argv);
-	return (NULL);
+	exit(EXIT_FAILURE);
 }

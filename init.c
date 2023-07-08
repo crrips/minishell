@@ -6,7 +6,7 @@
 /*   By: apiloian <apiloian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:40:37 by apiloian          #+#    #+#             */
-/*   Updated: 2023/07/08 20:56:13 by apiloian         ###   ########.fr       */
+/*   Updated: 2023/07/08 21:02:13 by apiloian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@ void	init(char **envp, t_data *data)
 		args = ft_split(str, ' ');
 		if (*str)
 		{
-			data->join_path = x_path(data, args[0]);
-			if (*data->join_path)
+			if (fork() == 0)
 			{
-				if (fork() == 0)
-					execve(data->join_path, args, envp);
+				data->join_path = x_path(data, args[0]);
+				execve(data->join_path, args, envp);
 			}
 			while (wait(NULL) != -1)
 				;
