@@ -6,7 +6,7 @@
 /*   By: apiloian <apiloian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 15:30:17 by apiloian          #+#    #+#             */
-/*   Updated: 2023/07/08 20:54:09 by apiloian         ###   ########.fr       */
+/*   Updated: 2023/07/12 15:51:07 by apiloian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <sys/time.h>
+# include <limits.h>
 # include <libft.h>
 
 typedef struct s_data
@@ -38,5 +39,11 @@ void	init(char **envp, t_data *data);
 char	*find_path(char **env);
 
 char	*x_path(t_data *data, char *argv);
+
+int		check_builtin(char **args);
+
+//			BUILTINS		//
+void	echo(char **args);
+void	pwd(void);
 
 #endif
