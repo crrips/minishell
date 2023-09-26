@@ -13,7 +13,7 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
-# define MINISHELL  "\e[1;31m5051\033[0m "
+# define MINISHELL  "\e[1;31mebash\033[0m "
 # define NO_CMD     "ebash: %s: command not found\n"
 
 # include <unistd.h>
